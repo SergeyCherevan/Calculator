@@ -1,7 +1,10 @@
 
+import colorama as cama
+cama.init(convert=True)
+
 while True:    
     
-    print()
+    print(cama.Fore.BLUE)
     
     
     operation = input("операция: ")
@@ -16,7 +19,7 @@ while True:
         num1 = float( input("первое число: ") )
         
     except:
-        print("не удалось привести первый операнд к числовому виду")
+        print(cama.Fore.RED + "не удалось привести первый операнд к числовому виду")
         continue
         
 
@@ -25,12 +28,12 @@ while True:
             num2 = float( input("второе число: ") )
             
         except:
-            print("не удалось привести первый операнд к числовому виду")
+            print(cama.Fore.RED + "не удалось привести второй операнд к числовому виду")
             continue
     
 
 
-    print("результат:", end=" ")
+    print(cama.Fore.BLACK + "результат:" + cama.Fore.GREEN, end=" ")
 
 
     if operation == "унарный +":
@@ -52,8 +55,8 @@ while True:
         print(num1 - num2)
 
     else:
-        print("неизвестная операция")
+        print(cama.Fore.RED + "неизвестная операция")
 
 
-print("\nпрограмма прекратила выполнение")
+print(cama.Fore.CYAN + "\nпрограмма прекратила выполнение")
 input()
