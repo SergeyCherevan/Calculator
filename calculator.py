@@ -4,10 +4,8 @@ cama.init(convert=True)
 
 while True:    
     
-    print(cama.Fore.BLUE)
-    
-    
-    operation = input("операция: ")
+    print(cama.Fore.BLUE + "\nоперация: " + cama.Style.RESET_ALL, end="")    
+    operation = input()
     
 
     if operation == "end":
@@ -15,8 +13,9 @@ while True:
 
 
 
-    try:
-        num1 = float( input("первое число: ") )
+    try:        
+        print(cama.Fore.BLUE + "первое число: " + cama.Style.RESET_ALL, end="")
+        num1 = float( input() )
         
     except:
         print(cama.Fore.RED + "не удалось привести первый операнд к числовому виду")
@@ -25,7 +24,8 @@ while True:
 
     if not operation.startswith("унарный"):
         try:
-            num2 = float( input("второе число: ") )
+            print(cama.Fore.BLUE + "второе число: " + cama.Style.RESET_ALL, end="")
+            num2 = float( input() )
             
         except:
             print(cama.Fore.RED + "не удалось привести второй операнд к числовому виду")
@@ -33,7 +33,7 @@ while True:
     
 
 
-    print(cama.Fore.BLACK + "результат:" + cama.Fore.GREEN, end=" ")
+    print(cama.Style.RESET_ALL + "результат:" + cama.Fore.GREEN, end=" ")
 
 
     if operation == "унарный +":
